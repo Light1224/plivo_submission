@@ -1,4 +1,4 @@
-# Plivo IVR Demo — InspireWorks Technical Assignment
+# Plivo IVR Demo — Take Home Assignemnt 1 
 
 Demo IVR system built with Plivo Voice API demonstrating outbound calling, OTP authentication, and a multi-level voice menu.
 
