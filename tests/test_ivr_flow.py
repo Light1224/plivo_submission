@@ -12,7 +12,7 @@ def build_client() -> TestClient:
         plivo_auth_token="token",
         plivo_source_number="+14155550100",
         public_base_url="https://example.ngrok-free.app",
-        live_associate_number="+14155550199",
+        live_associate_number="+912264236412",
         otp_code="0609",
         default_target_number="+14155550123",
         audio_file_url="https://s3.amazonaws.com/plivocloud/Trumpet.mp3",
@@ -73,4 +73,5 @@ def test_level_two_option_two_forwards_call() -> None:
 
     assert response.status_code == 200
     assert "<Dial" in response.text
-    assert "+14155550199" in response.text
+    assert "+912264236412" in response.text
+    assert "could not connect" in response.text  # fallback message present

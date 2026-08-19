@@ -123,7 +123,17 @@ class IvrFlowBuilder:
                 EN_PROMPTS["forwarding"] if normalized_lang == "en" else ES_PROMPTS["forwarding"]
             )
         )
-        dial = plivoxml.DialElement(caller_id=self.settings.plivo_source_number)
+        # timeout=30: wait up to 30s for associate to answer before falling through
+        dial = plivoxml.DialElement(timeout=30)
         dial.add(plivoxml.NumberElement(self.settings.live_associate_number))
         response.add(dial)
+        # Fallback: if dial fails, times out, or associate hangs up first
+        response.add(
+            plivoxml.SpeakElement(
+                "We could not connect you to an associate. Goodbye."
+                if normalized_lang == "en"
+                else "No pudimos conectarlo con un asesor. Adios."
+            )
+        )
+        response.add(plivoxml.HangupElement())
         return response.to_string()
