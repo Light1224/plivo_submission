@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plivo IVR Assignment</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; max-width: 720px; }
+      .card { border: 1px solid #ddd; border-radius: 8px; padding: 1rem 1.25rem; }
+      label { display: block; margin-bottom: 0.5rem; }
+      input { width: 100%; padding: 0.6rem; margin-bottom: 0.75rem; }
+      button { padding: 0.6rem 1rem; cursor: pointer; }
+      .ok { color: #0a7f2e; }
+      .err { color: #b00020; }
+      .muted { color: #666; font-size: 0.95rem; }
+      code { background: #f3f3f3; padding: 0.15rem 0.35rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>Plivo IVR Demo</h1>
+    <p class="muted">Minimal UI to trigger outbound calls for the assignment.</p>
+
+    <div class="card">
+      <form method="post" action="/trigger-call">
+        <label for="target_number">Target phone number (E.164, e.g. +14155550123)</label>
+        <input id="target_number" name="target_number" required value="{{ default_target }}" />
+        <button type="submit">Trigger Outbound Call</button>
+      </form>
+
+      {% if success %}
+      <p class="ok">{{ success }}</p>
+      {% endif %}
+
+      {% if error %}
+      <p class="err">{{ error }}</p>
+      {% endif %}
+    </div>
+
+    <h3>Config status</h3>
+    {% if config_ready %}
+      <p class="ok">Outbound call config is set.</p>
+    {% else %}
+      <p class="err">Outbound call config is incomplete.</p>
+    {% endif %}
+    {% if otp_ok %}
+      <p class="ok">OTP format is valid (4 digits).</p>
+    {% else %}
+      <p class="err">OTP format is invalid. Set <code></code>OTP_CODE</code> to DDMM (4 digits).</p>
+    {% endif %}
+    <p class="muted">Current <code>PUBLIC_BASE_URL</code>: {{ public_base_url or "(not set)" }}</p>
+  </body>
+</html>

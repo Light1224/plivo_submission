@@ -1,0 +1,19 @@
+[project]
+name = "plivo-ivr-assignment"
+version = "0.1.0"
+description = "Minimal Plivo IVR demo for technical assignment"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "jinja2>=3.1.0",
+  "plivo>=4.58.2",
+  "python-dotenv>=1.0.1",
+  "python-multipart>=0.0.9",
+  "uvicorn[standard]>=0.30.0",
+  "pytest>=8.3.0",
+  "httpx>=0.28.1",
+]
+
+[tool.uv]
+package = false
