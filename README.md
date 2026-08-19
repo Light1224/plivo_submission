@@ -59,7 +59,18 @@ tests/
 
 ## Setup
 
-**Prerequisites:** Python 3.11+, `uv`, ngrok
+**Prerequisites**
+
+- **Python 3.11+**
+- **uv** — Python package manager: https://docs.astral.sh/uv/getting-started/installation/
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- **ngrok** — public tunnel for Plivo webhooks: https://ngrok.com/download
+  ```bash
+  brew install ngrok  # macOS
+  # or download binary from https://ngrok.com/download
+  ```
 
 ```bash
 # 1. Install dependencies
