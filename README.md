@@ -35,8 +35,6 @@ app/
   templates/
     index.html       # Minimal web UI to trigger calls
 
-auth_check/
-  check_plivo_auth.py  # Standalone credential verification script
 
 tests/
   test_ivr_flow.py   # Webhook flow correctness tests
@@ -124,16 +122,6 @@ http://localhost:8000
 uv run pytest -q
 ```
 
-**Verify credentials:**
-```bash
-uv run python auth_check/check_plivo_auth.py \
-  --auth-id MAMTAWMGI0MZCTNTYZZS \
-  --auth-token <your_auth_token>
-```
-
-Expected: `HTTP 200 — Auth check: SUCCESS`
-
----
 
 ## Demo Script (for video)
 
