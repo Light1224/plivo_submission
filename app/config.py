@@ -32,7 +32,7 @@ class Settings:
             plivo_source_number=os.getenv("PLIVO_SOURCE_NUMBER", "").strip(),
             public_base_url=os.getenv("PUBLIC_BASE_URL", "").strip().rstrip("/"),
             live_associate_number=os.getenv("LIVE_ASSOCIATE_NUMBER", "").strip(),
-            otp_code=os.getenv("OTP_CODE", "1503").strip(),
+            otp_code=os.getenv("OTP_CODE", "0609").strip(),
             default_target_number=os.getenv("DEFAULT_TARGET_NUMBER", "").strip(),
             audio_file_url=os.getenv("AUDIO_FILE_URL", "https://s3.amazonaws.com/plivocloud/Trumpet.mp3").strip(),
             audio_help_message_en=os.getenv(

@@ -11,9 +11,13 @@ dependencies = [
   "python-dotenv>=1.0.1",
   "python-multipart>=0.0.9",
   "uvicorn[standard]>=0.30.0",
-  "pytest>=8.3.0",
-  "httpx>=0.28.1",
 ]
 
 [tool.uv]
 package = false
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.0",
+  "httpx>=0.28.1",
+]

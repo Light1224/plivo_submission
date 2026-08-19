@@ -1,4 +1,4 @@
-# Plivo IVR Demo — Take Home Assignemnt 1 
+# Plivo IVR Demo — InspireWorks Technical Assignment
 
 Demo IVR system built with Plivo Voice API demonstrating outbound calling, OTP authentication, and a multi-level voice menu.
 
@@ -51,7 +51,7 @@ tests/
 | Auth ID | `MAMTAWMGI0MZCTNTYZZS` |
 | Auth Token | set in `.env` |
 | Plivo source number | `+918035454161` |
-| Live associate number | `02264236412` |
+| Live associate number | `+912264236412` |
 | OTP (DDMM) | `0609` |
 | Receiver number | `+918951296699` |
 
@@ -88,7 +88,7 @@ PLIVO_AUTH_ID=MAMTAWMGI0MZCTNTYZZS
 PLIVO_AUTH_TOKEN=<your_auth_token>
 PLIVO_SOURCE_NUMBER=+918035454161
 PUBLIC_BASE_URL=https://<your-ngrok-url>
-LIVE_ASSOCIATE_NUMBER=02264236412
+LIVE_ASSOCIATE_NUMBER=+912264236412
 OTP_CODE=0609
 DEFAULT_TARGET_NUMBER=+918951296699
 ```
@@ -144,7 +144,7 @@ Expected: `HTTP 200 — Auth check: SUCCESS`
 | 3 | Enter correct OTP `0609` | Level 1 menu plays |
 | 4 | Press `1` for English | Level 2 menu plays in English |
 | 5 | Press `1` | Audio message plays |
-| 6 | Trigger again, navigate to Level 2, press `2` | Call forwards to `02264236412` |
+| 6 | Trigger again, navigate to Level 2, press `2` | Call forwards to `+912264236412` |
 
 ---
 
